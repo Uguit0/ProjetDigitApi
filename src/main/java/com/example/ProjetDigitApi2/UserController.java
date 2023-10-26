@@ -1,9 +1,9 @@
 package com.example.ProjetDigitApi2;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,41 +13,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
-
-	private List<String> users;
-
-	public UserController() {
-		users = new ArrayList<>();
-		users.add("Alex");
-		users.add("Alice");
-		users.add("Yoan");
-	}
-
+	
+	@Autowired
+    private UserService userService;
+	
+	
 	@GetMapping
-	public List<String> getAllUsers() {
-		return users;
-	}
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
 
-	@GetMapping("/{userName}")
-	public ResponseEntity<String> getUser(@PathVariable String userName) {
-	    for (String user : users) {
-	        if (user.equals(userName)) {
-	            return ResponseEntity.ok(user);
-	        }
-	    }
-	    return ResponseEntity.notFound().build();
+	@GetMapping("/{id}")
+	public User getUser(@PathVariable Long id) {
+		return userService.getUser(id);
 	}
 
 	@PostMapping
-	public void addUser(@RequestBody String userName) {
-		users.add(userName);
+	public void addUser(@RequestBody User user) {
+	    userService.addUser(user);
 	}
 
-	@DeleteMapping("/{userName}")
-	public void deleteUser(@PathVariable String userName) {
-		users.remove(userName);
+	@DeleteMapping("/{id}")
+	public void deleteUser(@PathVariable Long id) {
+	    userService.deleteUser(id);
 	}
 
 }

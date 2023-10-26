@@ -3,13 +3,16 @@ package com.example.ProjetDigitApi2;
 
 public class User {
     private String username;
+    private Long id;
 
-    public User(String username) {
+    public User(Long id, String username) {
+    	this.id = id;
         this.username = username;
     }
-
-    public String getUsername() {
-        return username;
+    public Long getId() {
+        return id;
     }
-    
+    public String getUsername() {
+    	return username;
+    }
 }
