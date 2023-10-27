@@ -1,6 +1,7 @@
 package com.example.ProjetDigitApi2;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +18,18 @@ public class UserService implements IuserService {
     }
 
     @Override
-    public User getUser(Long id) {
+    public User getUser(UUID id) {
         return userRepository.getUser(id);
     }
 
     @Override
     public void addUser(User user) {
+        user.setId(UUID.randomUUID());
         userRepository.addUser(user);
     }
 
     @Override
-    public void deleteUser(Long id) {
+    public void deleteUser(UUID id) {
         userRepository.deleteUser(id);
     }
 
