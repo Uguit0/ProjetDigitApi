@@ -1,4 +1,6 @@
-package com.example.ProjetDigitApi2;
+package Infrastructure;
+
+import Domain.User;
 
 import java.util.List;
 import java.util.UUID;

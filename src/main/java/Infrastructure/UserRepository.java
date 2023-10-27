@@ -1,9 +1,10 @@
-package com.example.ProjetDigitApi2;
+package Infrastructure;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import Domain.User;
 import org.springframework.stereotype.Repository;
 
 @Repository
