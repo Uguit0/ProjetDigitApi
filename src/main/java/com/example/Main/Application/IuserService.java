@@ -1,6 +1,6 @@
-package Application;
+package com.example.Main.Application;
 
-import Domain.User;
+import com.example.Main.Domain.User;
 
 import java.util.List;
 import java.util.UUID;

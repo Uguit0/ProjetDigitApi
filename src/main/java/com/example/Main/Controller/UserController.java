@@ -1,11 +1,11 @@
-package Controller;
+package com.example.Main.Controller;
 
 
 import java.util.List;
 import java.util.UUID;
 
-import Application.UserService;
-import Domain.User;
+import com.example.Main.Application.UserService;
+import com.example.Main.Domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

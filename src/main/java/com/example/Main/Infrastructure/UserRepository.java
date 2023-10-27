@@ -1,10 +1,10 @@
-package Infrastructure;
+package com.example.Main.Infrastructure;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import Domain.User;
+import com.example.Main.Domain.User;
 import org.springframework.stereotype.Repository;
 
 @Repository
