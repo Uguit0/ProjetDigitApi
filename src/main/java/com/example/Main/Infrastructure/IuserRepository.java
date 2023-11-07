@@ -11,5 +11,4 @@ public interface IuserRepository {
     User getUser(UUID id);
     void addUser(User user);
     void deleteUser(UUID id);
-//toto
 }

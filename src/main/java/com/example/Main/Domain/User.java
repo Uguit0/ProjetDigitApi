@@ -1,9 +1,16 @@
 package com.example.Main.Domain;
 
 
+import jakarta.persistence.*;
+
+
 import java.util.UUID;
 
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;
     private UUID id;
 
